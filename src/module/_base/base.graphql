@@ -1,0 +1,32 @@
+type Query {
+  model(slug: ID!): Slug
+}
+
+type Mutation {
+  model(slug: ID!): MutableSlug
+}
+
+interface Slug {
+  slug: ID!
+}
+
+interface MutableSlug {
+  slug: ID!
+}
+
+interface MutableUpload {
+  upload(file: Upload!): String
+}
+
+
+
+
+type File {
+  filename: String!
+  mimetype: String!
+  encoding: String!
+}
+
+scalar Upload
+
+
